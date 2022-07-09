@@ -1,0 +1,41 @@
+<div class="container">
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" [(ngModel)]="searchString">
+    <button mat-icon-button matSuffix (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  
+  <div *ngIf="isShow">
+    <table>
+      <tr>
+        <th></th>
+        <th>City</th>
+        <th>Country </th>
+        <th>State</th>
+        <th>County</th>
+        <th>View</th>
+      </tr>
+      <tr *ngFor="let city of cityArray">
+        <td>
+          <img src="{{city.country_code | flag}}" alt="">
+        </td>
+        <td>{{city.name}}</td>
+        <td>{{city.country}}</td>
+        <td>{{city.admin_1}}</td>
+        <td>{{city.admin_2}}</td>
+        <td class="icon">
+          <button mat-button (click)="viewMeteo(city)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+  
+      </tr>
+    </table>
+  </div>
+  
+  <div>
+    <app-forecast-meteo *ngIf="!isShow"></app-forecast-meteo>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0px;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td{
+    padding: 12px 24px;
+}
+
+td{
+    border: solid 2px black;
+    border-left: none;
+    border-right: none;
+}
+
+img{
+    width: 48px;
+}

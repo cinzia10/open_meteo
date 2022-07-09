@@ -1,0 +1,27 @@
+
+<table>
+    <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Temperature</th>
+        <th>Humidity </th>
+        <th>Rain</th>
+        <th>Pressure</th>
+        <th>Cloud Cover</th>
+        <th>Wind Direction</th>
+        <th>Wind Velocity</th>
+    </tr>
+    <tr *ngFor="let forecast of forecastArray">
+        <td class="icon">
+            <img src="{{forecast.code | codeIcon}}" alt="">
+        </td>
+        <td>{{forecast.date | date: 'medium'}}</td>
+        <td>{{forecast.temperature | unit: ' °C'}}</td>
+        <td>{{forecast.humidity | unit: ' %'}}</td>
+        <td>{{forecast.rain | unit: ' mm'}}</td>
+        <td>{{forecast.pressure | unit: ' hPa'}}</td>
+        <td>{{forecast.cloudCover | unit: ' %'}}</td>
+        <td>{{forecast.windDirection | unit: ' °'}}</td>
+        <td>{{forecast.windSpeed | unit: ' km/h'}}</td>
+    </tr>
+</table>
